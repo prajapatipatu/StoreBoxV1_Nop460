@@ -1,0 +1,84 @@
+﻿@model ContactVendorModel
+@{
+    Layout = "_ColumnsOne";
+
+    //title
+    NopHtml.AddTitleParts(T("PageTitle.ContactVendor", Model.VendorName).Text);
+    //page class
+    NopHtml.AppendPageCssClassParts("html-contact-page");
+}
+<div class="page contact-page">
+    <div class="page-title-top">
+        <div class="container">
+            <div class="page-title">
+                <h1>@T("PageTitle.ContactVendor", Model.VendorName)</h1>
+            </div>
+        </div>
+    </div>
+    <div class="page-body">
+        <div class="container">
+            <div class="container-max">
+                @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.ContactVendorTop, additionalData = Model })
+                @if (Model.SuccessfullySent)
+                {
+                    <div class="result">
+                        @Model.Result
+                    </div>
+                }
+                else
+                {
+                    <form asp-route="ContactVendor" method="post">
+                        <div asp-validation-summary="ModelOnly" class="message-error"></div>
+                        <div class="fieldset">
+                            <div class="form-fields">
+                                <div class="inputs">
+                                    <div class="lab-req">
+                                        <label asp-for="FullName"></label>
+                                        <nop-required />
+                                    </div>
+                                    <input asp-for="FullName" placeholder="@T("ContactVendor.FullName.Hint")" class="fullname form-control" />
+                                    <span asp-validation-for="FullName"></span>
+                                </div>
+                                <div class="inputs">
+                                    <div class="lab-req">
+                                        <label asp-for="Email"></label>
+                                        <nop-required />
+                                    </div>
+                                    <input asp-for="Email" placeholder="@T("ContactVendor.Email.Hint")" class="email form-control" />
+                                    <span asp-validation-for="Email"></span>
+                                </div>
+                                @if (Model.SubjectEnabled)
+                                {
+                                    <div class="inputs">
+                                        <div class="lab-req">
+                                            <label asp-for="Subject"></label>
+                                            <nop-required />
+                                        </div>
+                                        <input asp-for="Subject" placeholder="@T("ContactVendor.Subject.Hint")" class="subject form-control" />
+                                        <span asp-validation-for="Subject"></span>
+                                    </div>
+                                }
+                                <div class="inputs">
+                                    <div class="lab-req">
+                                        <label asp-for="Enquiry"></label>
+                                        <nop-required />
+                                    </div>
+                                    <textarea asp-for="Enquiry" placeholder="@T("ContactVendor.Enquiry.Hint")" class="enquiry form-control"></textarea>
+                                    <span asp-validation-for="Enquiry"></span>
+                                </div>
+                                @if (Model.DisplayCaptcha)
+                                {
+                                    <nop-captcha />
+                                }
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <button type="submit" name="send-email" class="button-1 contact-us-button btn btn-primary">@T("ContactVendor.Button")</button>
+                        </div>
+                    </form>
+                }
+                @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.ContactVendorBottom, additionalData = Model })
+            </div>
+        </div>
+    </div>
+</div>

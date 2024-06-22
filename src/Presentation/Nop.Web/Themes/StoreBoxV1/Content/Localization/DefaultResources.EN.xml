@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Language Name="English">
+    
+      <LocaleResource Name="SS.Call.Us.Now">
+        <Value>CALL US NOW</Value>
+      </LocaleResource>
+
+    <LocaleResource Name="SS.Product.New.Label">
+        <Value>New</Value>
+    </LocaleResource>
+	<LocaleResource Name="SS.Product.Filter.Label">
+		<Value>Filter</Value>
+	</LocaleResource>
+	<LocaleResource Name="SS.Product.Welcome.Label">
+		<Value>Welcome</Value>
+	</LocaleResource>
+
+	<LocaleResource Name="SS.Product.ShopNow.Label">
+		<Value>Shop Now</Value>
+	</LocaleResource>
+
+    <LocaleResource Name="SS.OverView.Title">
+        <Value>Overview</Value>
+    </LocaleResource>
+    <LocaleResource Name="SS.Specifications.Title">
+        <Value>Specifications</Value>
+    </LocaleResource>
+    <LocaleResource Name="SS.Tags.Title">
+        <Value>Tags</Value>
+    </LocaleResource>
+
+
+    <LocaleResource Name="SS.Account.Login.Title">
+        <Value>Login</Value>
+    </LocaleResource>
+    <LocaleResource Name="SS.Account.Signup.Title">
+        <Value>SignUp</Value>
+    </LocaleResource>
+    <LocaleResource Name="SS.Account.Need.Title">
+        <Value>Need an account ?</Value>
+    </LocaleResource>
+
+    <LocaleResource Name="SS.Cart.View.Btn">
+        <Value>View Cart</Value>
+    </LocaleResource>
+
+    <LocaleResource Name="SS.Newsletter.Desc">
+        <Value>Get all the latest information on events, sales and offers. Sign up for newsletter:</Value>
+    </LocaleResource>
+
+</Language>
